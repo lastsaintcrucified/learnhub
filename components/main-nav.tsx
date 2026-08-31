@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Icons } from "@/components/icons"
+import { authClient } from "@/lib/auth-client"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,10 +15,12 @@ import {
 
 export function MainNav() {
   const pathname = usePathname()
+  const { data: session } = authClient.useSession()
+  const brandHref = session?.user ? "/dashboard" : "/"
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-6 flex items-center space-x-2">
+      <Link href={brandHref} className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">LearnHub</span>
       </Link>
@@ -36,7 +39,7 @@ export function MainNav() {
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+                      href={brandHref}
                     >
                       <Icons.logo className="h-6 w-6" />
                       <div className="mb-2 mt-4 text-lg font-medium">LearnHub</div>

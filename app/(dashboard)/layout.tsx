@@ -61,7 +61,7 @@ export default function DashboardLayout({
               <MobileNav />
             </div>
             <div className="flex items-center gap-2 md:hidden">
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="/dashboard" className="flex items-center space-x-2">
                 <Icons.logo className="h-6 w-6" />
                 <span className="font-bold">LearnHub</span>
               </Link>
@@ -118,7 +118,7 @@ export default function DashboardLayout({
         <div className="flex flex-1">
           <Sidebar>
             <SidebarHeader className="flex items-center px-4 py-2">
-              <Link href="/" className="flex items-center gap-2">
+              <Link href="/dashboard" className="flex items-center gap-2">
                 <Icons.logo className="h-6 w-6" />
                 <span className="font-bold">LearnHub</span>
               </Link>

@@ -9,10 +9,13 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Icons } from "@/components/icons"
+import { authClient } from "@/lib/auth-client"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
   const pathname = usePathname()
+  const { data: session } = authClient.useSession()
+  const brandHref = session?.user ? "/dashboard" : "/"
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -26,7 +29,7 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
-        <MobileLink href="/" className="flex items-center" onOpenChange={setOpen}>
+        <MobileLink href={brandHref} className="flex items-center" onOpenChange={setOpen}>
           <Icons.logo className="mr-2 h-4 w-4" />
           <span className="font-bold">LearnHub</span>
         </MobileLink>
