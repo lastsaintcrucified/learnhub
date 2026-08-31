@@ -24,15 +24,15 @@ export default function Home() {
       </header>
       <main className="flex-1">
         <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-          <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-            <h1 className="text-3xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+          <div className="container mx-auto flex max-w-[64rem] flex-col items-center justify-center gap-4 px-4 text-center">
+            <h1 className="mx-auto max-w-5xl text-center text-3xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               Learn at your own pace with LearnHub
             </h1>
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <p className="mx-auto max-w-[42rem] text-center leading-normal text-muted-foreground sm:text-xl sm:leading-8">
               Discover courses taught by expert instructors. Join our community of learners and advance your skills
               today.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="mx-auto flex w-full justify-center gap-4 flex-col sm:flex-row">
               <Button asChild size="lg">
                 <Link href="/courses">Browse Courses</Link>
               </Button>
